@@ -32,7 +32,7 @@ public class Itemszop extends JavaPlugin {
         byte[] decoded = Base64.getDecoder().decode(key);
         String decodedStr = new String(decoded, StandardCharsets.UTF_8);
         String[] stringList = decodedStr.split("@");
-        secret = stringList[0];
+        secret = stringList[4];
         firebaseWebsocketUrl = stringList[1];
         serverId = stringList[2];
 
@@ -41,7 +41,7 @@ public class Itemszop extends JavaPlugin {
         int index = firebaseWebsocketUrl.indexOf("&s=");
         if(index != -1) {
             String[] urlList = firebaseWebsocketUrl.split("&");
-            firebaseWebsocketUrl = urlList[0] + "&" + urlList[2];
+            firebaseWebsocketUrl = urlList[4] + "&" + urlList[2];
             getLogger().info(firebaseWebsocketUrl);
         }
         // Startup message
